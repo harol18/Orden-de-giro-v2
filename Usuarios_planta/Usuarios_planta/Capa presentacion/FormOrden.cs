@@ -18,7 +18,7 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormOrden : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
         MySqlDataReader dr;
 
@@ -107,18 +107,26 @@ namespace Usuarios_planta.Formularios
 
         private void BtnImprimir_Click(object sender, EventArgs e)
         {
-            BtnGuardar.Visible = false;
-            BtnImprimir.Visible = false;
-            BtnLimpiar.Visible = false;
+            if (cmbcambio_condiciones.Text== "Cliente Acepta" || cmbcambio_condiciones.Text == "No aplica")
+            {
+                BtnGuardar.Visible = false;
+                BtnImprimir.Visible = false;
+                BtnLimpiar.Visible = false;
 
-            Graphics g = this.CreateGraphics();
-            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-            Graphics mg = Graphics.FromImage(bmp);
-            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-            printPreviewDialog1.ShowDialog();
-            BtnGuardar.Visible = true;
-            BtnImprimir.Visible = true;
-            BtnLimpiar.Visible = true;
+                Graphics g = this.CreateGraphics();
+                bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+                Graphics mg = Graphics.FromImage(bmp);
+                mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+                printPreviewDialog1.ShowDialog();
+                BtnGuardar.Visible = true;
+                BtnImprimir.Visible = true;
+                BtnLimpiar.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("", "",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+                                
         }
 
         private void TxtNom_entidad1_TextChanged_1(object sender, EventArgs e)
@@ -138,7 +146,7 @@ namespace Usuarios_planta.Formularios
         {
 
             cmds.buscar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
-            TxtPlazo, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
+            TxtPlazo_solicitado, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
             cmbCoordinador, cmbDactiloscopia, cmbG_telefonica, Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1,
             Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2, Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3,
             Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4, Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5,
@@ -202,7 +210,7 @@ namespace Usuarios_planta.Formularios
             if (validar())
             {
                 cmds.Insertar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtCuenta, TxtEstatura, TxtPeso, TxtScoring, TxtValor_aprobado,
-            TxtPlazo, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
+            TxtPlazo_solicitado, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
             cmbCoordinador, cmbDactiloscopia, cmbG_telefonica, Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1,
             Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2, Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3,
             Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4, Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5,
@@ -819,6 +827,49 @@ namespace Usuarios_planta.Formularios
                 Txtoficina_girar.Text = registro["sucursal"].ToString();
             }
             con.Close();
+        }
+
+        private void Btn_comentarios_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Frmcomentarios();
+            formulario.Show();
+        }
+
+        private void Txtplazo_aprobado_Validated(object sender, EventArgs e)
+        {
+            if (TxtPlazo_solicitado.Text!= Txtplazo_aprobado.Text)
+            {
+                MessageBox.Show("Proceder a realizar cambio de condiciones","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                cmbcambio_condiciones.Text = "Pendiente";
+            }
+        }
+
+        private void Txtplazo_aprobado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void cmbcambio_condiciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)(Keys.Enter))
+            {
+                e.Handled = true;
+                SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void btn_buscar_oficina_Click(object sender, EventArgs e)
+        {
+            cmds.ver_oficinas(Txtoficina,lboficina,lbciudad);
+        }
+
+        private void Btn_buscar_nit_Click(object sender, EventArgs e)
+        {
+            cmds.ver_entidad(Txtentidad,lbentidad);
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)

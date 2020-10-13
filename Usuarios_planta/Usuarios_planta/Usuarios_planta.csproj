@@ -230,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app1.ico" />
+    <None Include="Resources\copy_50px.png" />
     <Content Include="índice.ico" />
     <None Include="Resources\calculator_50px.png" />
   </ItemGroup>

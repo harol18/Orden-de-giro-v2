@@ -157,10 +157,13 @@
   <data name="índice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\índice.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calculator_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calculator_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="meadow-4485609_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meadow-4485609_1920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calculator_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calculator_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="copy_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

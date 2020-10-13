@@ -16,7 +16,7 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
 
         public void Insertar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtCuenta, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtScoring, TextBox TxtValor_aprobado,
@@ -29,7 +29,7 @@ namespace Usuarios_planta
         {
             
             con.Open();            
-            MySqlCommand cmd = new MySqlCommand("insertar_orden", con);
+            MySqlCommand cmd = new MySqlCommand("guardar_desembolso", con);
             MySqlTransaction myTrans; // Iniciar una transacción local 
             myTrans = con.BeginTransaction(); // Debe asignar tanto el objeto de transacción como la conexión // al objeto de Comando para una transacción local pendiente 
             try
@@ -94,35 +94,14 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_nombre_funcionario", TxtNomFuncionario.Text);                
                 cmd.ExecuteNonQuery();
                 myTrans.Commit();
-                MessageBox.Show("Información Registrada");
+                MessageBox.Show("Información Registrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 con.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                try
-                {
-                    myTrans.Rollback();
-                    Console.WriteLine("Error",e.ToString());
-                }
-                catch (MySqlException ex)
-                {
-                    if (myTrans.Connection != null)
-                    {
-                        Console.WriteLine("Se encontró una excepción de tipo" + ex.GetType() +
-                                                      " al intentar revertir la transacción..");
-                        Console.Write(ex.ToString());
-                        Console.Write(e.ToString());
-                    }
-                }
-                Console.WriteLine("Se encontró una excepción de tipo " + e.GetType() +
-                                              " al insertar los datos.");
-                Console.WriteLine("Ninguno de los registros se escribió en la base de datos.");
-                
-
-            }
-            finally
-            {
+                MessageBox.Show(ex.ToString());
                 con.Close();
+                MessageBox.Show("Conexion cerrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -205,18 +184,42 @@ namespace Usuarios_planta
                 }
                 else
                 {
-                    MessageBox.Show("Conexion cerrada");
+                    MessageBox.Show("Caso no existe", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 con.Close();
-
             }
             catch (Exception ex)
-            {
-                Console.WriteLine(ex);   
+            { 
                 MessageBox.Show(ex.ToString());
                 con.Close();
-                MessageBox.Show("Conexion cerrada");
+                MessageBox.Show("Conexion cerrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void ver_oficinas(TextBox Txtoficina, Label lboficina, Label lbciudad)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
+            comando.Parameters.AddWithValue("@codigo", Txtoficina.Text);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+                lboficina.Text = registro["sucursal"].ToString();
+                lbciudad.Text = registro["ciudad"].ToString();
+            }
+            con.Close();
+        }
+        public void ver_entidad(TextBox Txtentidad, Label lbentidad)
+        {
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_entidades WHERE nit_entidad = @nit_entidad ", con);
+            comando.Parameters.AddWithValue("@nit_entidad", Txtentidad.Text);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+                lbentidad.Text = registro["nombre_entidad"].ToString();
+            }
+            con.Close();
         }
     }
 }

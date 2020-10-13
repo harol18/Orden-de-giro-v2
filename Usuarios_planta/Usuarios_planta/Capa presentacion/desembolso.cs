@@ -29,7 +29,7 @@ namespace Usuarios_planta
             //leftBorderBtn.Size = new Size(7, 44);
             leftBorderBtn = new Panel
             {
-                Size = new Size(7, 44)
+                Size = new Size(7, 55)
             };
             panelSideMenu.Controls.Add(leftBorderBtn);
             //hideSubMenu();
@@ -100,7 +100,7 @@ namespace Usuarios_planta
 
         private void BtnOrden_MouseHover(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color1);
+            ActivateButton(sender, RGBColors.color4);
             labelInicio.Text = BtnOrden.Text;
             icon2.IconChar = BtnOrden.IconChar;
             icon2.IconColor = BtnOrden.IconColor;
