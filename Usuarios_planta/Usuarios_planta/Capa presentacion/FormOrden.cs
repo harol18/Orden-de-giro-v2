@@ -18,7 +18,7 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormOrden : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
         MySqlDataReader dr;
 
@@ -32,6 +32,7 @@ namespace Usuarios_planta.Formularios
 
         private void FormOrden_Load(object sender, EventArgs e)
         {
+            Txtcod_giro.Enabled = false;
             lblfecha_actual.Text = fecha.ToString();
             BtnSimulador.Visible = false;
             MySqlCommand cmd = new MySqlCommand("SELECT nombre_entidad FROM tf_entidades", con);
@@ -124,7 +125,7 @@ namespace Usuarios_planta.Formularios
             }
             else
             {
-                MessageBox.Show("", "",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor revisar cambio de condiciones", "Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
                                 
         }
@@ -145,13 +146,19 @@ namespace Usuarios_planta.Formularios
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
 
-            cmds.buscar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
-            TxtPlazo_solicitado, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
-            cmbCoordinador, cmbDactiloscopia, cmbG_telefonica, Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1,
-            Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2, Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3,
-            Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4, Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5,
-            Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6, Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7,
-            Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8, TxtTotal, TxtSaldo, cmbestado,TxtIDfuncionario, TxtNomFuncionario);
+            cmds.Buscar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
+                              TxtPlazo_solicitado, Txtplazo_aprobado, cmbDestino, cmbcambio_condiciones, TxtRauto, TxtConvenio, TxtCod_oficina,  TxtNom_oficina, TxtCiudad,
+                              Txtcod_giro, Txtoficina_girar, Txtciudad_giro, TxtId_gestor, TxtNom_gestor, cmbCoordinador, cmbDactiloscopia, cmbG_telefonica,
+                              Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1, Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2,
+                              Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3, Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4,
+                              Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
+                              Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
+                              TxtTotal, TxtSaldo, cmbestado, TxtIDfuncionario, TxtNomFuncionario);
+
+            if (TxtCod_oficina.Text=="244" || TxtCod_oficina.Text == "246")
+            {
+                Txtcod_giro.Enabled = true;
+            }
         }
 
         private bool validar()
@@ -209,13 +216,14 @@ namespace Usuarios_planta.Formularios
             BorrarMensajeError();
             if (validar())
             {
-                cmds.Insertar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtCuenta, TxtEstatura, TxtPeso, TxtScoring, TxtValor_aprobado,
-            TxtPlazo_solicitado, cmbDestino, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad, TxtId_gestor, TxtNom_gestor,
-            cmbCoordinador, cmbDactiloscopia, cmbG_telefonica, Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1,
-            Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2, Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3,
-            Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4, Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5,
-            Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6, Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7,
-            Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8, TxtTotal, TxtSaldo, cmbestado, TxtIDfuncionario, TxtNomFuncionario);
+            cmds.Guardar_orden(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
+                              TxtPlazo_solicitado, Txtplazo_aprobado, cmbDestino, cmbcambio_condiciones, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad,
+                              Txtcod_giro, Txtoficina_girar, Txtciudad_giro, TxtId_gestor, TxtNom_gestor, cmbCoordinador, cmbDactiloscopia, cmbG_telefonica,
+                              Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1, Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2,
+                              Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3, Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4,
+                              Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
+                              Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
+                              TxtTotal, TxtSaldo, cmbestado, TxtIDfuncionario, TxtNomFuncionario);
             }  
 
         }
@@ -232,6 +240,7 @@ namespace Usuarios_planta.Formularios
                 TxtCiudad.Text = registro["ciudad"].ToString();
                 Txtcod_giro.Text = registro["cod_principal"].ToString();
                 Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
+                Txtciudad_giro.Text = registro["ciudad"].ToString();
 
             }
             con.Close();
@@ -792,9 +801,9 @@ namespace Usuarios_planta.Formularios
 
         private void TxtNom_oficina_TextChanged(object sender, EventArgs e)
         {
-            if (TxtNom_oficina.Text == "EMPRESAS BARRANQUILLA")
+            if (TxtNom_oficina.Text == "EMPRESAS MANIZALES")
             {
-                MessageBox.Show("Favor confirmar confirmar con el asesor oficina a girar el cheques , Ojo la orden de giro debe llevar las dos oficinas","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Favor confirmar confirmar con el asesor oficina a girar el cheques , Ojo la orden de giro debe llevar las dos oficinas","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -860,16 +869,6 @@ namespace Usuarios_planta.Formularios
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
-        }
-
-        private void btn_buscar_oficina_Click(object sender, EventArgs e)
-        {
-            cmds.ver_oficinas(Txtoficina,lboficina,lbciudad);
-        }
-
-        private void Btn_buscar_nit_Click(object sender, EventArgs e)
-        {
-            cmds.ver_entidad(Txtentidad,lbentidad);
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)

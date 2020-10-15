@@ -16,16 +16,17 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
 
-        public void Insertar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtCuenta, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtScoring, TextBox TxtValor_aprobado,
-            TextBox TxtPlazo, ComboBox cmbDestino, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad, TextBox TxtId_gestor, TextBox TxtNom_gestor,
+        public void Guardar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
+            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
+            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox Txtciudad_giro, TextBox TxtId_gestor, TextBox TxtNom_gestor,
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
             TextBox Txtobligacion6, TextBox TxtNom_entidad6, TextBox TxtNit6, TextBox TxtValor6, TextBox Txtobligacion7, TextBox TxtNom_entidad7, TextBox TxtNit7, TextBox TxtValor7,
-            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8,TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+            TextBox Txtobligacion8, TextBox TxtNom_entidad8, TextBox TxtNit8, TextBox TxtValor8, TextBox TxtTotal, TextBox TxtSaldo, ComboBox cmbestado, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             
             con.Open();            
@@ -43,13 +44,18 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_peso", TxtPeso.Text);               
                 cmd.Parameters.AddWithValue("@_scoring", TxtScoring.Text);
                 cmd.Parameters.AddWithValue("@_valor_aprobado", TxtValor_aprobado.Text);
-                cmd.Parameters.AddWithValue("@_plazo", TxtPlazo.Text);
+                cmd.Parameters.AddWithValue("@_plazo_solicitado", TxtPlazo_solicitado.Text);
+                cmd.Parameters.AddWithValue("@_plazo_aprobado", Txtplazo_aprobado.Text);
                 cmd.Parameters.AddWithValue("@_destino", cmbDestino.Text);
+                cmd.Parameters.AddWithValue("@_cambio_condiciones", cmbcambio_condiciones.Text);
                 cmd.Parameters.AddWithValue("@_r_Automatico", TxtRauto.Text);
                 cmd.Parameters.AddWithValue("@_convenio", TxtConvenio.Text);
                 cmd.Parameters.AddWithValue("@_codigo_oficina", TxtCod_oficina.Text);
                 cmd.Parameters.AddWithValue("@_sucursal", TxtNom_oficina.Text);
                 cmd.Parameters.AddWithValue("@_ciudad", TxtCiudad.Text);
+                cmd.Parameters.AddWithValue("@_oficina_girar", Txtcod_giro.Text);
+                cmd.Parameters.AddWithValue("@_sucursal_girar", Txtoficina_girar.Text);
+                cmd.Parameters.AddWithValue("@_ciudad_girar", Txtciudad_giro.Text);
                 cmd.Parameters.AddWithValue("@_cedula_gestor", TxtId_gestor.Text);
                 cmd.Parameters.AddWithValue("@_nombre_gestor", TxtNom_gestor.Text);
                 cmd.Parameters.AddWithValue("@_nombre_coordinador", cmbCoordinador.Text);
@@ -105,8 +111,9 @@ namespace Usuarios_planta
             }
         }
 
-        public void buscar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
-            TextBox TxtPlazo, ComboBox cmbDestino, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad, TextBox TxtId_gestor, TextBox TxtNom_gestor,
+        public void Buscar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
+            TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
+            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox Txtciudad_giro, TextBox TxtId_gestor, TextBox TxtNom_gestor, 
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
@@ -131,13 +138,18 @@ namespace Usuarios_planta
                     TxtCuenta.Text = registro["cuenta"].ToString();
                     TxtScoring.Text = registro["scoring"].ToString();
                     TxtValor_aprobado.Text = registro["valor_aprobado"].ToString();
-                    TxtPlazo.Text = registro["plazo"].ToString();
+                    TxtPlazo_solicitado.Text = registro["plazo_solicitado"].ToString();
+                    Txtplazo_aprobado.Text = registro["plazo_aprobado"].ToString();
                     cmbDestino.Text = registro["destino"].ToString();
+                    cmbcambio_condiciones.Text = registro["cambio_condiciones"].ToString();
                     TxtRauto.Text = registro["r_Automatico"].ToString();
                     TxtConvenio.Text = registro["convenio"].ToString();
                     TxtCod_oficina.Text = registro["codigo_oficina"].ToString();
                     TxtNom_oficina.Text = registro["sucursal"].ToString();
                     TxtCiudad.Text = registro["ciudad"].ToString();
+                    Txtcod_giro.Text = registro["oficina_girar"].ToString();
+                    Txtoficina_girar.Text = registro["sucursal_girar"].ToString();
+                    Txtciudad_giro.Text = registro["ciudad_girar"].ToString();
                     TxtId_gestor.Text = registro["cedula_gestor"].ToString();
                     TxtNom_gestor.Text = registro["nombre_gestor"].ToString();
                     cmbCoordinador.Text = registro["nombre_coordinador"].ToString();
@@ -184,7 +196,21 @@ namespace Usuarios_planta
                 }
                 else
                 {
-                    MessageBox.Show("Caso no existe", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    con.Close();
+                    MySqlCommand comando = new MySqlCommand("SELECT * FROM datos_basicos_libranza WHERE radicado = @radicado ", con);
+                    comando.Parameters.AddWithValue("@radicado", TxtRadicado.Text);
+                    con.Open();
+                    MySqlDataReader registro1 = comando.ExecuteReader();
+                    if (registro1.Read())
+                    {
+                        TxtCedula.Text = registro1["cedula"].ToString();
+                        TxtNombre.Text = registro1["nombre"].ToString();
+                        TxtId_gestor.Text = registro1["cedula_gestor"].ToString();
+                        TxtNom_gestor.Text = registro1["nombre_gestor"].ToString();
+                        cmbCoordinador.Text = registro1["nombre_coordinador"].ToString();
+                        con.Close();
+                    }
+                    con.Close();
                 }
                 con.Close();
             }
@@ -194,32 +220,6 @@ namespace Usuarios_planta
                 con.Close();
                 MessageBox.Show("Conexion cerrada", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        public void ver_oficinas(TextBox Txtoficina, Label lboficina, Label lbciudad)
-        {
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
-            comando.Parameters.AddWithValue("@codigo", Txtoficina.Text);
-            con.Open();
-            MySqlDataReader registro = comando.ExecuteReader();
-            if (registro.Read())
-            {
-                lboficina.Text = registro["sucursal"].ToString();
-                lbciudad.Text = registro["ciudad"].ToString();
-            }
-            con.Close();
-        }
-        public void ver_entidad(TextBox Txtentidad, Label lbentidad)
-        {
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_entidades WHERE nit_entidad = @nit_entidad ", con);
-            comando.Parameters.AddWithValue("@nit_entidad", Txtentidad.Text);
-            con.Open();
-            MySqlDataReader registro = comando.ExecuteReader();
-            if (registro.Read())
-            {
-                lbentidad.Text = registro["nombre_entidad"].ToString();
-            }
-            con.Close();
-        }
+        }       
     }
 }
