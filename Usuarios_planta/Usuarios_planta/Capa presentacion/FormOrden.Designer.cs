@@ -77,8 +77,6 @@
             this.TxtNit1 = new System.Windows.Forms.TextBox();
             this.Txtobligacion1 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.Txtciudad_giro = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.Txtcod_giro = new System.Windows.Forms.TextBox();
             this.cmbCoordinador = new System.Windows.Forms.ComboBox();
             this.TxtNom_gestor = new System.Windows.Forms.TextBox();
@@ -8508,8 +8506,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.Txtciudad_giro);
-            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.Txtcod_giro);
             this.groupBox3.Controls.Add(this.cmbCoordinador);
             this.groupBox3.Controls.Add(this.TxtNom_gestor);
@@ -8532,32 +8528,10 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos Generales";
             // 
-            // Txtciudad_giro
-            // 
-            this.Txtciudad_giro.BackColor = System.Drawing.SystemColors.Menu;
-            this.Txtciudad_giro.Enabled = false;
-            this.Txtciudad_giro.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
-            this.Txtciudad_giro.Location = new System.Drawing.Point(611, 51);
-            this.Txtciudad_giro.MaxLength = 30;
-            this.Txtciudad_giro.Multiline = true;
-            this.Txtciudad_giro.Name = "Txtciudad_giro";
-            this.Txtciudad_giro.Size = new System.Drawing.Size(155, 28);
-            this.Txtciudad_giro.TabIndex = 30;
-            this.Txtciudad_giro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(558, 56);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 17);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Ciudad";
-            // 
             // Txtcod_giro
             // 
             this.Txtcod_giro.BackColor = System.Drawing.SystemColors.Window;
+            this.Txtcod_giro.Enabled = false;
             this.Txtcod_giro.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F);
             this.Txtcod_giro.Location = new System.Drawing.Point(128, 51);
             this.Txtcod_giro.Multiline = true;
@@ -8605,7 +8579,6 @@
             this.Txtoficina_girar.Size = new System.Drawing.Size(338, 28);
             this.Txtoficina_girar.TabIndex = 27;
             this.Txtoficina_girar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txtoficina_girar.TextChanged += new System.EventHandler(this.Txtoficina_girar_TextChanged);
             // 
             // label34
             // 
@@ -8699,7 +8672,6 @@
             this.TxtNom_oficina.Size = new System.Drawing.Size(338, 28);
             this.TxtNom_oficina.TabIndex = 13;
             this.TxtNom_oficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TxtNom_oficina.TextChanged += new System.EventHandler(this.TxtNom_oficina_TextChanged);
             // 
             // label12
             // 
@@ -9690,8 +9662,6 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox Txtcod_giro;
-        private System.Windows.Forms.TextBox Txtciudad_giro;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox Txtplazo_aprobado;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.ComboBox cmbcambio_condiciones;

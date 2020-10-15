@@ -16,12 +16,12 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
 
-        public void Guardar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
+        public void Guardar_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
             TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
-            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox Txtciudad_giro, TextBox TxtId_gestor, TextBox TxtNom_gestor,
+            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor,
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
@@ -55,7 +55,6 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_ciudad", TxtCiudad.Text);
                 cmd.Parameters.AddWithValue("@_oficina_girar", Txtcod_giro.Text);
                 cmd.Parameters.AddWithValue("@_sucursal_girar", Txtoficina_girar.Text);
-                cmd.Parameters.AddWithValue("@_ciudad_girar", Txtciudad_giro.Text);
                 cmd.Parameters.AddWithValue("@_cedula_gestor", TxtId_gestor.Text);
                 cmd.Parameters.AddWithValue("@_nombre_gestor", TxtNom_gestor.Text);
                 cmd.Parameters.AddWithValue("@_nombre_coordinador", cmbCoordinador.Text);
@@ -111,9 +110,9 @@ namespace Usuarios_planta
             }
         }
 
-        public void Buscar_orden(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
+        public void Buscar_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
             TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
-            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox Txtciudad_giro, TextBox TxtId_gestor, TextBox TxtNom_gestor, 
+            TextBox Txtcod_giro, TextBox Txtoficina_girar, TextBox TxtId_gestor, TextBox TxtNom_gestor, 
             ComboBox cmbCoordinador, ComboBox cmbDactiloscopia, ComboBox cmbG_telefonica, TextBox Txtobligacion1, TextBox TxtNom_entidad1, TextBox TxtNit1, TextBox TxtValor1,
             TextBox Txtobligacion2, TextBox TxtNom_entidad2, TextBox TxtNit2, TextBox TxtValor2, TextBox Txtobligacion3, TextBox TxtNom_entidad3, TextBox TxtNit3, TextBox TxtValor3,
             TextBox Txtobligacion4, TextBox TxtNom_entidad4, TextBox TxtNit4, TextBox TxtValor4, TextBox Txtobligacion5, TextBox TxtNom_entidad5, TextBox TxtNit5, TextBox TxtValor5,
@@ -124,7 +123,7 @@ namespace Usuarios_planta
             try
             {
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("buscar_orden", con);
+                MySqlCommand cmd = new MySqlCommand("buscar_desembolso", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_radicado", TxtRadicado.Text);
                 MySqlDataReader registro;
@@ -149,7 +148,6 @@ namespace Usuarios_planta
                     TxtCiudad.Text = registro["ciudad"].ToString();
                     Txtcod_giro.Text = registro["oficina_girar"].ToString();
                     Txtoficina_girar.Text = registro["sucursal_girar"].ToString();
-                    Txtciudad_giro.Text = registro["ciudad_girar"].ToString();
                     TxtId_gestor.Text = registro["cedula_gestor"].ToString();
                     TxtNom_gestor.Text = registro["nombre_gestor"].ToString();
                     cmbCoordinador.Text = registro["nombre_coordinador"].ToString();
