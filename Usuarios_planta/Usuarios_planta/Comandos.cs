@@ -16,8 +16,9 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+
 
         public void Guardar_desembolso(TextBox TxtRadicado, TextBox TxtCedula, TextBox TxtNombre, TextBox TxtEstatura, TextBox TxtPeso, TextBox TxtCuenta, TextBox TxtScoring, TextBox TxtValor_aprobado,
             TextBox TxtPlazo_solicitado, TextBox Txtplazo_aprobado, ComboBox cmbDestino, ComboBox cmbcambio_condiciones, TextBox TxtRauto, TextBox TxtConvenio, TextBox TxtCod_oficina, TextBox TxtNom_oficina, TextBox TxtCiudad,
@@ -194,20 +195,7 @@ namespace Usuarios_planta
                 }
                 else
                 {
-                    con.Close();
-                    MySqlCommand comando = new MySqlCommand("SELECT * FROM datos_basicos_libranza WHERE radicado = @radicado ", con);
-                    comando.Parameters.AddWithValue("@radicado", TxtRadicado.Text);
-                    con.Open();
-                    MySqlDataReader registro1 = comando.ExecuteReader();
-                    if (registro1.Read())
-                    {
-                        TxtCedula.Text = registro1["cedula"].ToString();
-                        TxtNombre.Text = registro1["nombre"].ToString();
-                        TxtId_gestor.Text = registro1["cedula_gestor"].ToString();
-                        TxtNom_gestor.Text = registro1["nombre_gestor"].ToString();
-                        cmbCoordinador.Text = registro1["nombre_coordinador"].ToString();
-                        con.Close();
-                    }
+                    MessageBox.Show("Caso no existe","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     con.Close();
                 }
                 con.Close();

@@ -89,6 +89,12 @@
     <Compile Include="Capa presentacion\desembolso.Designer.cs">
       <DependentUpon>desembolso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capa presentacion\Esquema_segmentacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capa presentacion\Esquema_segmentacion.Designer.cs">
+      <DependentUpon>Esquema_segmentacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capa presentacion\FormOrden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capa presentacion\desembolso.resx">
       <DependentUpon>desembolso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capa presentacion\Esquema_segmentacion.resx">
+      <DependentUpon>Esquema_segmentacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capa presentacion\FormOrden.resx">
       <DependentUpon>FormOrden.cs</DependentUpon>
@@ -231,6 +240,19 @@
   <ItemGroup>
     <Content Include="app1.ico" />
     <None Include="Resources\copy_50px.png" />
+    <None Include="Resources\mind_map_50px.png" />
+    <None Include="Resources\1_50px.png" />
+    <None Include="Resources\2_50px.png" />
+    <None Include="Resources\3_50px.png" />
+    <None Include="Resources\4_50px.png" />
+    <None Include="Resources\info_50px.png" />
+    <None Include="Resources\info_40px.png" />
+    <None Include="Resources\man_in_blue_jacket_information_50px.png" />
+    <None Include="Resources\Captura2.JPG" />
+    <None Include="Resources\simbolo-de-moneda-dolar.png" />
+    <None Include="Resources\simbolo-de-moneda-dolar%281%29.png" />
+    <None Include="Resources\simbolo-de-moneda-dolar%282%29.png" />
+    <None Include="Resources\box_important_100px.png" />
     <Content Include="índice.ico" />
     <None Include="Resources\calculator_50px.png" />
   </ItemGroup>

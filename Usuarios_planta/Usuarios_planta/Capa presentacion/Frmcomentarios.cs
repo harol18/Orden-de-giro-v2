@@ -54,15 +54,15 @@ namespace Usuarios_planta.Capa_presentacion
             }
             else if (cmbestado2.Text == "Etapas Cumplidas")
             {
-                txtcomentarios_for.Text = "Etapas cumplidas pendiente control de calidad " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 708";
+                txtcomentarios_for.Text = "Etapas cumplidas pendiente control de calidad " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 708";
             }
             else if (cmbestado2.Text == "Ok Formalizado")
             {
-                txtcomentarios_for.Text = "412; SCORING; OK FORMALIZADO; CEDULA " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 702";
+                txtcomentarios_for.Text = "412; SCORING; OK FORMALIZADO; CEDULA " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 702";
             }
             else if (cmbestado2.Text == "Ok credito girado")
             {
-                txtcomentarios_for.Text = "Ok crédito girado " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 703";
+                txtcomentarios_for.Text = "Ok crédito girado " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 703";
             }
             else if (cmbestado2.Text == "Aplicacion de pago")
             {
@@ -70,15 +70,15 @@ namespace Usuarios_planta.Capa_presentacion
             }
             else if (cmbestado2.Text == "411")
             {
-                txtcomentarios_for.Text = "411 operación on line en espera de desembolso " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 700";
+                txtcomentarios_for.Text = "411 operación on line en espera de desembolso " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 700";
             }
             else if (cmbestado2.Text == "411 Ratificacion visto bueno")
             {
-                txtcomentarios_for.Text = "411 operación on line en espera de desembolso " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 700 RVOBO";
+                txtcomentarios_for.Text = "411 operación on line en espera de desembolso " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 700 RVOBO";
             }
             else if (cmbestado2.Text == "411 Cuenta oficina")
             {
-                txtcomentarios_for.Text = "411 operación on line en espera de desembolso. Cuenta. Oficina " + fecha.ToString("dd/MM/yyyy") + cod_fun2.Text + " 700";
+                txtcomentarios_for.Text = "411 operación on line en espera de desembolso. Cuenta. Oficina " + fecha.ToString("dd/MM/yyyy") + " " + cod_fun2.Text + " 700";
             }
         }
 

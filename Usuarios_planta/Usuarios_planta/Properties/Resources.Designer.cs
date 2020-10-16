@@ -73,6 +73,56 @@ namespace Usuarios_planta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_50px {
+            get {
+                object obj = ResourceManager.GetObject("1_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_50px {
+            get {
+                object obj = ResourceManager.GetObject("2_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_50px {
+            get {
+                object obj = ResourceManager.GetObject("3_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_50px {
+            get {
+                object obj = ResourceManager.GetObject("4_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box_important_100px {
+            get {
+                object obj = ResourceManager.GetObject("box_important_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buscar {
             get {
                 object obj = ResourceManager.GetObject("buscar", resourceCulture);
@@ -106,6 +156,16 @@ namespace Usuarios_planta.Properties {
         internal static System.Drawing.Bitmap Captura1 {
             get {
                 object obj = ResourceManager.GetObject("Captura1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura2 {
+            get {
+                object obj = ResourceManager.GetObject("Captura2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +263,36 @@ namespace Usuarios_planta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap info_40px {
+            get {
+                object obj = ResourceManager.GetObject("info_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_50px {
+            get {
+                object obj = ResourceManager.GetObject("info_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap man_in_blue_jacket_information_50px {
+            get {
+                object obj = ResourceManager.GetObject("man_in_blue_jacket_information_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mas {
             get {
                 object obj = ResourceManager.GetObject("mas", resourceCulture);
@@ -216,6 +306,46 @@ namespace Usuarios_planta.Properties {
         internal static System.Drawing.Bitmap meadow_4485609_1920 {
             get {
                 object obj = ResourceManager.GetObject("meadow-4485609_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mind_map_50px {
+            get {
+                object obj = ResourceManager.GetObject("mind_map_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simbolo_de_moneda_dolar {
+            get {
+                object obj = ResourceManager.GetObject("simbolo-de-moneda-dolar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simbolo_de_moneda_dolar_1_ {
+            get {
+                object obj = ResourceManager.GetObject("simbolo-de-moneda-dolar(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simbolo_de_moneda_dolar_2_ {
+            get {
+                object obj = ResourceManager.GetObject("simbolo-de-moneda-dolar(2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

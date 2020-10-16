@@ -70,6 +70,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.fecha_fin);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btn_copiar2);
@@ -195,6 +196,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btn_copiar1);
             this.groupBox1.Controls.Add(this.txtcomentarios_vd);
@@ -322,7 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(664, 467);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);

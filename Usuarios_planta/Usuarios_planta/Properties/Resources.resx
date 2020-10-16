@@ -118,52 +118,91 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="índice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\índice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="índice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\índice.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondoM03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondoM03.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="simbolo-de-moneda-dolar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\simbolo-de-moneda-dolar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="identidad_visual_minsait_version_principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\identidad_visual_minsait_version_principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calculator_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calculator_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="descarga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\descarga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Captura1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="identidad_visual_minsait_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\identidad_visual_minsait_color.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="2_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Captura2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura2.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_0002_lema-minsait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\_0002_lema-minsait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="indra-aplicacion7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\indra-aplicacion7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Captura" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Captura.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="4_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="índice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\índice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoM03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoM03.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondoM031" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoM031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="índice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\índice.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calculator_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calculator_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="indra-aplicacion7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\indra-aplicacion7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="man_in_blue_jacket_information_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\man_in_blue_jacket_information_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mind_map_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mind_map_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura1.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Captura.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simbolo-de-moneda-dolar(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\simbolo-de-moneda-dolar(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="simbolo-de-moneda-dolar(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\simbolo-de-moneda-dolar(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="meadow-4485609_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\meadow-4485609_1920.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copy_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="identidad_visual_minsait_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\identidad_visual_minsait_color.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0002_lema-minsait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_0002_lema-minsait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box_important_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box_important_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

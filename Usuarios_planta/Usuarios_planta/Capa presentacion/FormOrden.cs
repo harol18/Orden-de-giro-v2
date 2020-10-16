@@ -18,7 +18,9 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormOrden : Form
     {
+        
         MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+
         Comandos cmds = new Comandos();
         MySqlDataReader dr;
 
@@ -80,8 +82,7 @@ namespace Usuarios_planta.Formularios
                 Sumar1();
             else
                 TxtValor8.Text = cpk8.ToString();
-        }
-        
+        }        
 
         private void TxtValor_aprobado_TextChanged(object sender, EventArgs e)
         {
@@ -100,7 +101,7 @@ namespace Usuarios_planta.Formularios
 
             if (Convert.ToInt32(TxtSaldo.Text) <= 2000000)
             {
-                MessageBox.Show("Saldo del cliente menor a 2 millones por favor proceder a realizar simulador","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Saldo del cliente menor a 2 millones por favor proceder a realizar simulador", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 BtnSimulador.Visible = true;
             }
         }
@@ -116,27 +117,25 @@ namespace Usuarios_planta.Formularios
         {
             if (cmbcambio_condiciones.Text== "Cliente Acepta" || cmbcambio_condiciones.Text == "No aplica")
             {
-                cmds.Guardar_desembolso(TxtRadicado, TxtCedula, TxtNombre, TxtEstatura, TxtPeso, TxtCuenta, TxtScoring, TxtValor_aprobado,
-                              TxtPlazo_solicitado, Txtplazo_aprobado, cmbDestino, cmbcambio_condiciones, TxtRauto, TxtConvenio, TxtCod_oficina, TxtNom_oficina, TxtCiudad,
-                              Txtcod_giro, Txtoficina_girar, TxtId_gestor, TxtNom_gestor, cmbCoordinador, cmbDactiloscopia, cmbG_telefonica,
-                              Txtobligacion1, TxtNom_entidad1, TxtNit1, TxtValor1, Txtobligacion2, TxtNom_entidad2, TxtNit2, TxtValor2,
-                              Txtobligacion3, TxtNom_entidad3, TxtNit3, TxtValor3, Txtobligacion4, TxtNom_entidad4, TxtNit4, TxtValor4,
-                              Txtobligacion5, TxtNom_entidad5, TxtNit5, TxtValor5, Txtobligacion6, TxtNom_entidad6, TxtNit6, TxtValor6,
-                              Txtobligacion7, TxtNom_entidad7, TxtNit7, TxtValor7, Txtobligacion8, TxtNom_entidad8, TxtNit8, TxtValor8,
-                              TxtTotal, TxtSaldo, cmbestado, TxtIDfuncionario, TxtNomFuncionario);
+                if (cbimpagos.Checked && cbcuenta.Checked && cbrestriccion.Checked && cbpagador.Checked)
+                {
+                    BtnGuardar.Visible = false;
+                    BtnImprimir.Visible = false;
+                    BtnLimpiar.Visible = false;
 
-                BtnGuardar.Visible = false;
-                BtnImprimir.Visible = false;
-                BtnLimpiar.Visible = false;
-
-                Graphics g = this.CreateGraphics();
-                bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-                Graphics mg = Graphics.FromImage(bmp);
-                mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-                printPreviewDialog1.ShowDialog();
-                BtnGuardar.Visible = true;
-                BtnImprimir.Visible = true;
-                BtnLimpiar.Visible = true;
+                    Graphics g = this.CreateGraphics();
+                    bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+                    Graphics mg = Graphics.FromImage(bmp);
+                    mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+                    printPreviewDialog1.ShowDialog();
+                    BtnGuardar.Visible = true;
+                    BtnImprimir.Visible = true;
+                    BtnLimpiar.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Algunas de las actividades importantes se encuentra sin marcar", "Favor validar !!!", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }             
             }
             else
             {
@@ -199,6 +198,16 @@ namespace Usuarios_planta.Formularios
                 ok = false;
                 epError.SetError(TxtValor_aprobado, "Digitar Valor");
             }
+            if (TxtPlazo_solicitado.Text == "")
+            {
+                ok = false;
+                epError.SetError(TxtPlazo_solicitado, "Digitar plazo solicitado");
+            }
+            if (Txtplazo_aprobado.Text == "")
+            {
+                ok = false;
+                epError.SetError(Txtplazo_aprobado, "Digitar plazo solicitado");
+            }
             if (TxtIDfuncionario.Text == "")
             {
                 ok = false;
@@ -215,6 +224,8 @@ namespace Usuarios_planta.Formularios
             epError.SetError(TxtNombre, "");
             epError.SetError(TxtScoring, "");
             epError.SetError(cmbestado, "");
+            epError.SetError(TxtPlazo_solicitado, "");
+            epError.SetError(Txtplazo_aprobado, "");
             epError.SetError(TxtValor_aprobado, "");
             epError.SetError(TxtIDfuncionario, "");
  
@@ -387,7 +398,7 @@ namespace Usuarios_planta.Formularios
             else if (TxtValor1.Text == "")
             {
                 TxtValor1.Text = Convert.ToString(0);
-            }
+            }          
         }
 
         private void TxtValor2_Validated(object sender, EventArgs e)
@@ -863,6 +874,12 @@ namespace Usuarios_planta.Formularios
                 e.Handled = true;
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        private void btn_segmentacion_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Esquema_segmentacion();
+            formulario.Show();
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
