@@ -35,6 +35,7 @@ namespace Usuarios_planta.Formularios
         private void FormOrden_Load(object sender, EventArgs e)
         {
             Txtcod_giro.Enabled = false;
+            lbexonerar.Visible = false;
             lblfecha_actual.Text = fecha.ToString();
             BtnSimulador.Visible = false;
             MySqlCommand cmd = new MySqlCommand("SELECT nombre_entidad FROM tf_entidades", con);
@@ -131,6 +132,7 @@ namespace Usuarios_planta.Formularios
                     BtnGuardar.Visible = true;
                     BtnImprimir.Visible = true;
                     BtnLimpiar.Visible = true;
+                    
                 }
                 else
                 {
@@ -270,8 +272,7 @@ namespace Usuarios_planta.Formularios
                     TxtCiudad.Text = registro["ciudad"].ToString();
                     Txtcod_giro.Text = registro["cod_principal"].ToString();
                     Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
-                }       
-                
+                }
             }
             con.Close();
         }
@@ -913,14 +914,14 @@ namespace Usuarios_planta.Formularios
 
         private void TxtCod_oficina_Validated(object sender, EventArgs e)
         {
-           if(TxtNom_oficina.Text == "EMPRESAS MANIZALES" || TxtNom_oficina.Text == "EMPRESAS PEREIRA")
+           if(TxtNom_oficina.Text.Contains("EMPRESAS"))
             {
                 MessageBox.Show("Por favor confirmar con el asesor oficina a girar el cheque", "Importante !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Txtcod_giro.Enabled = true;
             }
-            else if (TxtNom_oficina.Text == "BANCA PERSONAL CALI")
+            else if (TxtNom_oficina.Text.Contains("BANCA PERSONAL"))
             {
-                Txtcod_giro.Enabled = true;
+                Txtcod_giro.Enabled = false;
             }           
         }
 
@@ -974,6 +975,59 @@ namespace Usuarios_planta.Formularios
         {
             Form formulario = new Esquema_segmentacion();
             formulario.Show();
+        }
+
+        private void cmbDestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbDestino_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDestino.Text== "Compra de Cartera" && TxtNom_oficina.Text=="LETICIA")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "CPK + RTQ" && TxtNom_oficina.Text == "LETICIA")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "Compra de Cartera" && TxtNom_oficina.Text == "SAN ANDRES")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "CPK + RTQ" && TxtNom_oficina.Text == "SAN ANDRES")
+            {
+                lbexonerar.Visible = true;
+            }
+            else
+            {
+                lbexonerar.Visible = false;
+            }
+        }
+
+        private void TxtNom_oficina_TextChanged(object sender, EventArgs e)
+        {
+            if (cmbDestino.Text == "Compra de Cartera" && TxtNom_oficina.Text == "LETICIA")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "CPK + RTQ" && TxtNom_oficina.Text == "LETICIA")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "Compra de Cartera" && TxtNom_oficina.Text == "SAN ANDRES")
+            {
+                lbexonerar.Visible = true;
+            }
+            else if (cmbDestino.Text == "CPK + RTQ" && TxtNom_oficina.Text == "SAN ANDRES")
+            {
+                lbexonerar.Visible = true;
+            }
+            else
+            {
+                lbexonerar.Visible = false;
+            }
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)

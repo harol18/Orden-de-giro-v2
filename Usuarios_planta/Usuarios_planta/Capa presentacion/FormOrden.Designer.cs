@@ -104,6 +104,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.TxtCedula = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.TxtEstatura = new System.Windows.Forms.TextBox();
@@ -117,10 +118,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lbexonerar = new System.Windows.Forms.Label();
             this.cmbestado = new System.Windows.Forms.ComboBox();
             this.TxtNomFuncionario = new System.Windows.Forms.TextBox();
             this.TxtIDfuncionario = new System.Windows.Forms.TextBox();
             this.TxtSaldo = new System.Windows.Forms.TextBox();
+            this.BtnSimulador = new FontAwesome.Sharp.IconButton();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -133,6 +136,9 @@
             this.label35 = new System.Windows.Forms.Label();
             this.lblfecha_actual = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
+            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.label47 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.cbpagador = new System.Windows.Forms.CheckBox();
@@ -145,14 +151,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_segmentacion = new FontAwesome.Sharp.IconButton();
             this.Btn_comentarios = new FontAwesome.Sharp.IconButton();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
-            this.BtnLimpiar = new FontAwesome.Sharp.IconButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnSimulador = new FontAwesome.Sharp.IconButton();
-            this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -8568,6 +8569,7 @@
             this.TxtNom_oficina.Size = new System.Drawing.Size(338, 28);
             this.TxtNom_oficina.TabIndex = 13;
             this.TxtNom_oficina.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtNom_oficina.TextChanged += new System.EventHandler(this.TxtNom_oficina_TextChanged);
             // 
             // label12
             // 
@@ -8729,6 +8731,8 @@
             this.cmbDestino.Name = "cmbDestino";
             this.cmbDestino.Size = new System.Drawing.Size(150, 28);
             this.cmbDestino.TabIndex = 10;
+            this.cmbDestino.SelectedIndexChanged += new System.EventHandler(this.cmbDestino_SelectedIndexChanged);
+            this.cmbDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDestino_KeyPress);
             // 
             // TxtConvenio
             // 
@@ -8877,6 +8881,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Cliente";
             // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackColor = System.Drawing.SystemColors.Menu;
+            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.BtnBuscar.IconColor = System.Drawing.Color.DimGray;
+            this.BtnBuscar.IconSize = 18;
+            this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnBuscar.Location = new System.Drawing.Point(192, 25);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Rotation = 0D;
+            this.BtnBuscar.Size = new System.Drawing.Size(30, 26);
+            this.BtnBuscar.TabIndex = 0;
+            this.BtnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            // 
             // TxtCedula
             // 
             this.TxtCedula.BackColor = System.Drawing.SystemColors.Window;
@@ -9014,6 +9036,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lbexonerar);
             this.groupBox6.Controls.Add(this.cmbestado);
             this.groupBox6.Controls.Add(this.TxtNomFuncionario);
             this.groupBox6.Controls.Add(this.TxtIDfuncionario);
@@ -9032,6 +9055,17 @@
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Resultado";
+            // 
+            // lbexonerar
+            // 
+            this.lbexonerar.AutoSize = true;
+            this.lbexonerar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbexonerar.ForeColor = System.Drawing.Color.Red;
+            this.lbexonerar.Location = new System.Drawing.Point(739, 50);
+            this.lbexonerar.Name = "lbexonerar";
+            this.lbexonerar.Size = new System.Drawing.Size(176, 20);
+            this.lbexonerar.TabIndex = 81;
+            this.lbexonerar.Text = "Se debe exonerar credito";
             // 
             // cmbestado
             // 
@@ -9085,6 +9119,24 @@
             this.TxtSaldo.Size = new System.Drawing.Size(123, 24);
             this.TxtSaldo.TabIndex = 101;
             this.TxtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BtnSimulador
+            // 
+            this.BtnSimulador.BackColor = System.Drawing.Color.White;
+            this.BtnSimulador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnSimulador.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnSimulador.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSimulador.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.BtnSimulador.IconColor = System.Drawing.Color.Black;
+            this.BtnSimulador.IconSize = 25;
+            this.BtnSimulador.Location = new System.Drawing.Point(727, 16);
+            this.BtnSimulador.Name = "BtnSimulador";
+            this.BtnSimulador.Rotation = 0D;
+            this.BtnSimulador.Size = new System.Drawing.Size(219, 27);
+            this.BtnSimulador.TabIndex = 61;
+            this.BtnSimulador.Text = "Debes realizar simulador";
+            this.BtnSimulador.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnSimulador.UseVisualStyleBackColor = false;
             // 
             // TxtTotal
             // 
@@ -9197,6 +9249,66 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 41);
             this.panel1.TabIndex = 68;
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.BtnGuardar.IconColor = System.Drawing.Color.White;
+            this.BtnGuardar.IconSize = 21;
+            this.BtnGuardar.Location = new System.Drawing.Point(10, 5);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Rotation = 0D;
+            this.BtnGuardar.Size = new System.Drawing.Size(93, 33);
+            this.BtnGuardar.TabIndex = 18;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // BtnImprimir
+            // 
+            this.BtnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnImprimir.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnImprimir.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimir.ForeColor = System.Drawing.Color.White;
+            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.BtnImprimir.IconColor = System.Drawing.Color.White;
+            this.BtnImprimir.IconSize = 21;
+            this.BtnImprimir.Location = new System.Drawing.Point(128, 5);
+            this.BtnImprimir.Name = "BtnImprimir";
+            this.BtnImprimir.Rotation = 0D;
+            this.BtnImprimir.Size = new System.Drawing.Size(98, 33);
+            this.BtnImprimir.TabIndex = 19;
+            this.BtnImprimir.Text = "Imprimir";
+            this.BtnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnImprimir.UseVisualStyleBackColor = false;
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
+            // 
+            // BtnLimpiar
+            // 
+            this.BtnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnLimpiar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnLimpiar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
+            this.BtnLimpiar.IconSize = 21;
+            this.BtnLimpiar.Location = new System.Drawing.Point(256, 5);
+            this.BtnLimpiar.Name = "BtnLimpiar";
+            this.BtnLimpiar.Rotation = 0D;
+            this.BtnLimpiar.Size = new System.Drawing.Size(91, 33);
+            this.BtnLimpiar.TabIndex = 22;
+            this.BtnLimpiar.Text = "Nuevo";
+            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnLimpiar.UseVisualStyleBackColor = false;
+            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
             // 
             // label47
             // 
@@ -9357,66 +9469,6 @@
             this.Btn_comentarios.UseVisualStyleBackColor = false;
             this.Btn_comentarios.Click += new System.EventHandler(this.Btn_comentarios_Click);
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconSize = 21;
-            this.BtnGuardar.Location = new System.Drawing.Point(10, 5);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Rotation = 0D;
-            this.BtnGuardar.Size = new System.Drawing.Size(93, 33);
-            this.BtnGuardar.TabIndex = 18;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // BtnImprimir
-            // 
-            this.BtnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnImprimir.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnImprimir.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.ForeColor = System.Drawing.Color.White;
-            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.BtnImprimir.IconColor = System.Drawing.Color.White;
-            this.BtnImprimir.IconSize = 21;
-            this.BtnImprimir.Location = new System.Drawing.Point(128, 5);
-            this.BtnImprimir.Name = "BtnImprimir";
-            this.BtnImprimir.Rotation = 0D;
-            this.BtnImprimir.Size = new System.Drawing.Size(98, 33);
-            this.BtnImprimir.TabIndex = 19;
-            this.BtnImprimir.Text = "Imprimir";
-            this.BtnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnImprimir.UseVisualStyleBackColor = false;
-            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
-            // 
-            // BtnLimpiar
-            // 
-            this.BtnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
-            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnLimpiar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnLimpiar.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.BtnLimpiar.IconColor = System.Drawing.Color.White;
-            this.BtnLimpiar.IconSize = 21;
-            this.BtnLimpiar.Location = new System.Drawing.Point(256, 5);
-            this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Rotation = 0D;
-            this.BtnLimpiar.Size = new System.Drawing.Size(91, 33);
-            this.BtnLimpiar.TabIndex = 22;
-            this.BtnLimpiar.Text = "Nuevo";
-            this.BtnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnLimpiar.UseVisualStyleBackColor = false;
-            this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(33)))));
@@ -9443,42 +9495,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(381, 16);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // BtnSimulador
-            // 
-            this.BtnSimulador.BackColor = System.Drawing.Color.White;
-            this.BtnSimulador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnSimulador.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnSimulador.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSimulador.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.BtnSimulador.IconColor = System.Drawing.Color.Black;
-            this.BtnSimulador.IconSize = 29;
-            this.BtnSimulador.Location = new System.Drawing.Point(727, 24);
-            this.BtnSimulador.Name = "BtnSimulador";
-            this.BtnSimulador.Rotation = 0D;
-            this.BtnSimulador.Size = new System.Drawing.Size(219, 38);
-            this.BtnSimulador.TabIndex = 61;
-            this.BtnSimulador.Text = "Debes realizar simulador";
-            this.BtnSimulador.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BtnSimulador.UseVisualStyleBackColor = false;
-            // 
-            // BtnBuscar
-            // 
-            this.BtnBuscar.BackColor = System.Drawing.SystemColors.Menu;
-            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.BtnBuscar.IconColor = System.Drawing.Color.DimGray;
-            this.BtnBuscar.IconSize = 18;
-            this.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnBuscar.Location = new System.Drawing.Point(192, 25);
-            this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Rotation = 0D;
-            this.BtnBuscar.Size = new System.Drawing.Size(30, 26);
-            this.BtnBuscar.TabIndex = 0;
-            this.BtnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.BtnBuscar.UseVisualStyleBackColor = false;
-            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // FormOrden
             // 
@@ -9657,5 +9673,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox cbrestriccion;
         private System.Windows.Forms.CheckBox cbpagador;
+        private System.Windows.Forms.Label lbexonerar;
     }
 }
