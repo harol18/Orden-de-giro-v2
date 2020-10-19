@@ -18,8 +18,8 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormOrden : Form
     {
-        
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+
+        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
         Comandos cmds = new Comandos();
         MySqlDataReader dr;
@@ -248,21 +248,35 @@ namespace Usuarios_planta.Formularios
 
         }
 
+        string estado_oficina;
+
         private void TxtCod_oficina_TextChanged(object sender, EventArgs e)
-        {
+        {           
             MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
             comando.Parameters.AddWithValue("@codigo", TxtCod_oficina.Text);
             con.Open();
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNom_oficina.Text = registro["sucursal"].ToString();
-                TxtCiudad.Text = registro["ciudad"].ToString();
-                Txtcod_giro.Text = registro["cod_principal"].ToString();
-                Txtoficina_girar.Text = registro["sucursal_principal"].ToString();                                  
+                estado_oficina= registro["estado_oficina"].ToString();
+
+                if (estado_oficina== "Cerrada")
+                {
+                    MessageBox.Show("Oficina a segmentar se encuentra cerrada, por favor revisar !!!","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                else 
+                {
+                    TxtNom_oficina.Text = registro["sucursal"].ToString();
+                    TxtCiudad.Text = registro["ciudad"].ToString();
+                    Txtcod_giro.Text = registro["cod_principal"].ToString();
+                    Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
+                }       
+                
             }
             con.Close();
         }
+
+        string estado_cartera;
 
         private void TxtNom_entidad1_TextChanged(object sender, EventArgs e)
         {
@@ -272,7 +286,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit1.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit1.Text = null;
+                }
+                else 
+                {
+                    TxtNit1.Text = registro["nit_entidad"].ToString();
+                }                
             }
             con.Close();
         }
@@ -298,7 +322,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit2.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit2.Text = null;
+                }
+                else
+                {
+                    TxtNit2.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
@@ -311,7 +345,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit3.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit3.Text = null;
+                }
+                else
+                {
+                    TxtNit3.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
@@ -324,7 +368,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit4.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit4.Text = null;
+                }
+                else
+                {
+                    TxtNit4.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
@@ -337,7 +391,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit5.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit5.Text = null;
+                }
+                else
+                {
+                    TxtNit5.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
@@ -350,7 +414,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit6.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit6.Text = null;
+                }
+                else
+                {
+                    TxtNit6.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
@@ -363,7 +437,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit7.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit7.Text = null;
+                }
+                else
+                {
+                    TxtNit7.Text = registro["nit_entidad"].ToString();                    
+                }
             }
             con.Close();
         }
@@ -376,7 +460,17 @@ namespace Usuarios_planta.Formularios
             MySqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
-                TxtNit8.Text = registro["nit_entidad"].ToString();
+                estado_cartera = registro["estado_entidad"].ToString();
+
+                if (estado_cartera == "Cerrada")
+                {
+                    MessageBox.Show("Entidad se encuentra suspendida para Comprar!!! por favor revisar segun corresponda", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TxtNit8.Text = null;
+                }
+                else
+                {
+                    TxtNit8.Text = registro["nit_entidad"].ToString();
+                }
             }
             con.Close();
         }
