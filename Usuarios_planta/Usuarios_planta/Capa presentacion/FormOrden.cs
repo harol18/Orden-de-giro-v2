@@ -100,10 +100,14 @@ namespace Usuarios_planta.Formularios
             else
                 TxtSaldo.Text = cpk9.ToString();
 
-            if (Convert.ToInt32(TxtSaldo.Text) <= 2000000)
+            if (Convert.ToDouble(TxtSaldo.Text) <= 2000000)
             {
                 MessageBox.Show("Saldo del cliente menor a 2 millones por favor proceder a realizar simulador", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 BtnSimulador.Visible = true;
+            }
+            else
+            {
+                BtnSimulador.Visible = false;
             }
         }
 
