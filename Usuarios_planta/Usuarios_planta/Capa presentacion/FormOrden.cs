@@ -258,27 +258,27 @@ namespace Usuarios_planta.Formularios
 
         private void TxtCod_oficina_TextChanged(object sender, EventArgs e)
         {           
-            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
-            comando.Parameters.AddWithValue("@codigo", TxtCod_oficina.Text);
-            con.Open();
-            MySqlDataReader registro = comando.ExecuteReader();
-            if (registro.Read())
-            {
-                estado_oficina= registro["estado_oficina"].ToString();
+            //MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
+            //comando.Parameters.AddWithValue("@codigo", TxtCod_oficina.Text);
+            //con.Open();
+            //MySqlDataReader registro = comando.ExecuteReader();
+            //if (registro.Read())
+            //{
+            //    estado_oficina= registro["estado_oficina"].ToString();
 
-                if (estado_oficina== "Cerrada")
-                {
-                    MessageBox.Show("Oficina a segmentar se encuentra cerrada, por favor revisar !!!","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                }
-                else 
-                {
-                    TxtNom_oficina.Text = registro["sucursal"].ToString();
-                    TxtCiudad.Text = registro["ciudad"].ToString();
-                    Txtcod_giro.Text = registro["cod_principal"].ToString();
-                    Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
-                }
-            }
-            con.Close();
+            //    if (estado_oficina== "Cerrada")
+            //    {
+            //        MessageBox.Show("Oficina a segmentar se encuentra cerrada, por favor revisar !!!","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            //    }
+            //    else 
+            //    {
+            //        TxtNom_oficina.Text = registro["sucursal"].ToString();
+            //        TxtCiudad.Text = registro["ciudad"].ToString();
+            //        Txtcod_giro.Text = registro["cod_principal"].ToString();
+            //        Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
+            //    }
+            //}
+            //con.Close();
         }
 
         string estado_cartera;
@@ -918,7 +918,29 @@ namespace Usuarios_planta.Formularios
 
         private void TxtCod_oficina_Validated(object sender, EventArgs e)
         {
-           if(TxtNom_oficina.Text.Contains("EMPRESAS"))
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM tf_oficinas WHERE codigo_oficina = @codigo ", con);
+            comando.Parameters.AddWithValue("@codigo", TxtCod_oficina.Text);
+            con.Open();
+            MySqlDataReader registro = comando.ExecuteReader();
+            if (registro.Read())
+            {
+                estado_oficina = registro["estado_oficina"].ToString();
+
+                if (estado_oficina == "Cerrada")
+                {
+                    MessageBox.Show("Oficina a segmentar se encuentra cerrada, por favor revisar !!!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    TxtNom_oficina.Text = registro["sucursal"].ToString();
+                    TxtCiudad.Text = registro["ciudad"].ToString();
+                    Txtcod_giro.Text = registro["cod_principal"].ToString();
+                    Txtoficina_girar.Text = registro["sucursal_principal"].ToString();
+                }
+            }
+            con.Close();
+
+            if (TxtNom_oficina.Text.Contains("EMPRESAS"))
             {
                 MessageBox.Show("Por favor confirmar con el asesor oficina a girar el cheque", "Importante !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Txtcod_giro.Enabled = true;
@@ -1031,6 +1053,70 @@ namespace Usuarios_planta.Formularios
             else
             {
                 lbexonerar.Visible = false;
+            }
+        }
+
+        private void TxtNom_entidad1_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad1.Text=="")
+            {
+                TxtNit1.Text = null;                
+            }
+        }
+
+        private void TxtNom_entidad2_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad2.Text == "")
+            {
+                TxtNit2.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad3_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad3.Text == "")
+            {
+                TxtNit3.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad4_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad4.Text == "")
+            {
+                TxtNit4.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad5_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad5.Text == "")
+            {
+                TxtNit5.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad6_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad6.Text == "")
+            {
+                TxtNit6.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad7_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad7.Text == "")
+            {
+                TxtNit7.Text = null;
+            }
+        }
+
+        private void TxtNom_entidad8_Validated(object sender, EventArgs e)
+        {
+            if (TxtNom_entidad8.Text == "")
+            {
+                TxtNit8.Text = null;
             }
         }
 

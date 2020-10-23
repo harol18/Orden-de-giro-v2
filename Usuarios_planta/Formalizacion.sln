@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Usuarios_planta", "Usuarios_planta\Usuarios_planta.csproj", "{0C193761-EA0E-45A7-9BE9-5B78386C7B68}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Orden_Giro", "Orden_Giro\Orden_Giro.vdproj", "{B6589BA6-4776-444D-B47A-A0786019F0BF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{0C193761-EA0E-45A7-9BE9-5B78386C7B68}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{0C193761-EA0E-45A7-9BE9-5B78386C7B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C193761-EA0E-45A7-9BE9-5B78386C7B68}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6589BA6-4776-444D-B47A-A0786019F0BF}.Debug|Any CPU.ActiveCfg = Debug
-		{B6589BA6-4776-444D-B47A-A0786019F0BF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -227,6 +227,7 @@
             this.TxtNom_entidad1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad1.TextChanged += new System.EventHandler(this.TxtNom_entidad1_TextChanged);
             this.TxtNom_entidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad1_KeyPress);
+            this.TxtNom_entidad1.Validated += new System.EventHandler(this.TxtNom_entidad1_Validated);
             // 
             // TxtValor3
             // 
@@ -1852,6 +1853,7 @@
             this.TxtNom_entidad8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad8.TextChanged += new System.EventHandler(this.TxtNom_entidad8_TextChanged);
             this.TxtNom_entidad8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad8_KeyPress);
+            this.TxtNom_entidad8.Validated += new System.EventHandler(this.TxtNom_entidad8_Validated);
             // 
             // TxtNom_entidad7
             // 
@@ -3413,6 +3415,7 @@
             this.TxtNom_entidad7.TabIndex = 45;
             this.TxtNom_entidad7.TextChanged += new System.EventHandler(this.TxtNom_entidad7_TextChanged);
             this.TxtNom_entidad7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad7_KeyPress);
+            this.TxtNom_entidad7.Validated += new System.EventHandler(this.TxtNom_entidad7_Validated);
             // 
             // Txtobligacion8
             // 
@@ -5024,6 +5027,7 @@
             this.TxtNom_entidad6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad6.TextChanged += new System.EventHandler(this.TxtNom_entidad6_TextChanged);
             this.TxtNom_entidad6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad6_KeyPress);
+            this.TxtNom_entidad6.Validated += new System.EventHandler(this.TxtNom_entidad6_Validated);
             // 
             // Txtobligacion6
             // 
@@ -6623,6 +6627,7 @@
             this.TxtNom_entidad5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad5.TextChanged += new System.EventHandler(this.TxtNom_entidad5_TextChanged);
             this.TxtNom_entidad5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad5_KeyPress);
+            this.TxtNom_entidad5.Validated += new System.EventHandler(this.TxtNom_entidad5_Validated);
             // 
             // Txtobligacion5
             // 
@@ -8222,6 +8227,7 @@
             this.TxtNom_entidad4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad4.TextChanged += new System.EventHandler(this.TxtNom_entidad4_TextChanged);
             this.TxtNom_entidad4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad4_KeyPress);
+            this.TxtNom_entidad4.Validated += new System.EventHandler(this.TxtNom_entidad4_Validated);
             // 
             // Txtobligacion4
             // 
@@ -8260,6 +8266,7 @@
             this.TxtNom_entidad3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad3.TextChanged += new System.EventHandler(this.TxtNom_entidad3_TextChanged);
             this.TxtNom_entidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad3_KeyPress);
+            this.TxtNom_entidad3.Validated += new System.EventHandler(this.TxtNom_entidad3_Validated);
             // 
             // Txtobligacion3
             // 
@@ -8311,6 +8318,7 @@
             this.TxtNom_entidad2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtNom_entidad2.TextChanged += new System.EventHandler(this.TxtNom_entidad2_TextChanged);
             this.TxtNom_entidad2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNom_entidad2_KeyPress);
+            this.TxtNom_entidad2.Validated += new System.EventHandler(this.TxtNom_entidad2_Validated);
             // 
             // Txtobligacion2
             // 
